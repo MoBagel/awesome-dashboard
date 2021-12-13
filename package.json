@@ -3,57 +3,48 @@
   "version": "0.0.0-beta.1",
   "description": "",
   "main": "dist/index.js",
-  "scripts": {
-    "build": "webpack --mode production",
-    "lint": "./node_modules/.bin/eslint src",
-    "storybook": "start-storybook -s ./public -p 9090",
-    "build-storybook": "build-storybook -c .storybook -s ./public -o built-storybook",
-    "storybook-production": "node .storybook/server.js"
-  },
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "analyze": "ANALYZE=1 next build",
+    "storybook": "start-storybook -s ./public -p 9090",
+    "build-storybook": "build-storybook -c .storybook -s ./public -o built-storybook",
+    "storybook-production": "node .storybook/server.js",
+    "lint": "eslint 'src/**/*.js?(x)'",
+    "build": "rollup -c",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@storybook/react": "^6.1.18",
-    "antd": "^4.17.1",
+    "express": "^4.17.1",
     "less": "^3.12.2",
-    "less-loader": "^4.1.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "styled-components": "^5.3.3"
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.3",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-env": "^7.16.4",
     "@babel/register": "^7.10.5",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-viewport": "^5.3.19",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "eslint": "^8.3.0",
-    "eslint-config-airbnb": "19.0.1",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "pre-git": "^3.17.1"
-  },
-  "config": {
-    "pre-git": {
-      "enabled": true,
-      "pre-commit": [
-        "npm run test",
-        "npm run lint"
-      ],
-      "pre-push": [],
-      "post-commit": [],
-      "post-checkout": [],
-      "post-merge": []
-    }
-  },
-  "release": {
-    "analyzeCommits": "simple-commit-message"
+    "css-modules-require-hook": "^4.2.3",
+    "eslint": "^7.6.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
+    "less-loader": "4.1.0",
+    "rollup": "^2.61.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-less": "^1.1.3"
   }
 }
