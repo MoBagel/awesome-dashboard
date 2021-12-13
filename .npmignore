@@ -2,3 +2,9 @@ src/*
 webpack.config.js
 .storybook/*
 coverage/*
+build/*
+built-storybook/*
+.env
+.eslintignore
+.eslintrc.json
+.prettierrc

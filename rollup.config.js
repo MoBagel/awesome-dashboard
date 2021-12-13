@@ -1,17 +1,27 @@
-import babel from 'rollup-plugin-babel';
-import less from 'rollup-plugin-less';
+import babel from '@rollup/plugin-babel';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import replace from '@rollup/plugin-replace';
+import postcss from 'rollup-plugin-postcss';
 
 export default {
-  input: './src/Button.jsx',
+  input: "src/index.js",
   output: {
-    file: './build/bundle.min.js',
-    format: 'iife',
-    name: 'bundle'
+    file: "dist/index.js",
   },
   plugins: [
-    babel({
-      exclude: 'node_modules/**'
+    postcss({
+      extensions: [".css"],
     }),
-    less()
+    nodeResolve({
+      extensions: [".js"],
+    }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify( 'development' )
+    }),
+    babel({
+      presets: ["@babel/preset-react"],
+    }),
+    commonjs()
   ]
-}
+};
