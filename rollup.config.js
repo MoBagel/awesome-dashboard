@@ -3,6 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import postcss from 'rollup-plugin-postcss';
+import typescript from 'rollup-plugin-typescript'
 
 export default {
   input: "src/index.js",
@@ -22,6 +23,7 @@ export default {
     babel({
       presets: ["@babel/preset-react"],
     }),
-    commonjs()
+    commonjs(),
+    typescript()
   ]
 };

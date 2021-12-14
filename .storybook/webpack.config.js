@@ -9,6 +9,7 @@ module.exports = ({ config }) => {
       {
         loader: 'css-loader',
         options: {
+          modules: true,
           sourceMap: true,
         },
       },
@@ -16,6 +17,7 @@ module.exports = ({ config }) => {
         loader: 'less-loader',
         options: {
           sourceMap: true,
+          javascriptEnabled: true
         },
       },
     ],
