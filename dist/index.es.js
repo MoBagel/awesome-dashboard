@@ -22103,7 +22103,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = "/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */\n/* stylelint-disable no-duplicate-selectors */\n/* stylelint-disable */\n/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */\n.menu :global(.anticon) {\n  margin-right: 8px;\n}\n.menu :global(.ant-dropdown-menu-item) {\n  min-width: 160px;\n}\n.right {\n  display: flex;\n  float: right;\n  height: 72px;\n  margin-left: auto;\n  padding-right: 32px;\n  overflow: hidden;\n}\n.right .action {\n  display: flex;\n  align-items: center;\n  height: 72px;\n  cursor: pointer;\n  transition: all 0.3s;\n}\n.right .action > span {\n  vertical-align: middle;\n}\n.right .action:hover {\n  background: rgba(0, 0, 0, 0.025);\n}\n.right .action:global(.opened) {\n  background: rgba(0, 0, 0, 0.025);\n}\n.right .search:hover {\n  background: transparent;\n}\n.right .account .avatar {\n  color: rgba(0, 0, 0, 0.85);\n  vertical-align: top;\n  background: rgba(255, 255, 255, 0.85);\n}\n.right .account .dropdown svg {\n  margin-right: 8px;\n}\n.dark .action:hover {\n  background: #252a3d;\n}\n.dark .action:global(.opened) {\n  background: #252a3d;\n}\n.shadow {\n  box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;\n}\n";
+var css_248z$1 = "/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */\n/* stylelint-disable no-duplicate-selectors */\n/* stylelint-disable */\n/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */\n.index_menu__uxlXz .anticon {\n  margin-right: 8px;\n}\n.index_menu__uxlXz .ant-dropdown-menu-item {\n  min-width: 160px;\n}\n.index_right__27DLf {\n  display: flex;\n  float: right;\n  height: 72px;\n  margin-left: auto;\n  padding-right: 32px;\n  overflow: hidden;\n}\n.index_right__27DLf .index_action__37xx1 {\n  display: flex;\n  align-items: center;\n  height: 72px;\n  cursor: pointer;\n  transition: all 0.3s;\n}\n.index_right__27DLf .index_action__37xx1 > span {\n  vertical-align: middle;\n}\n.index_right__27DLf .index_action__37xx1:hover {\n  background: rgba(0, 0, 0, 0.025);\n}\n.index_right__27DLf .index_action__37xx1.opened {\n  background: rgba(0, 0, 0, 0.025);\n}\n.index_right__27DLf .index_search__Zhw0V:hover {\n  background: transparent;\n}\n.index_right__27DLf .index_account__qRMeW .index_avatar__3hDS0 {\n  color: rgba(0, 0, 0, 0.85);\n  vertical-align: top;\n  background: rgba(255, 255, 255, 0.85);\n}\n.index_right__27DLf .index_account__qRMeW .index_dropdown__3H5jB svg {\n  margin-right: 8px;\n}\n.index_dark__2qNaI .index_action__37xx1:hover {\n  background: #252a3d;\n}\n.index_dark__2qNaI .index_action__37xx1.opened {\n  background: #252a3d;\n}\n.index_shadow__ip0np {\n  box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;\n}\n";
+var styles$1 = {"menu":"index_menu__uxlXz","right":"index_right__27DLf","action":"index_action__37xx1","search":"index_search__Zhw0V","account":"index_account__qRMeW","avatar":"index_avatar__3hDS0","dropdown":"index_dropdown__3H5jB","dark":"index_dark__2qNaI","shadow":"index_shadow__ip0np"};
 styleInject(css_248z$1);
 
 // This icon file is generated automatically.
@@ -22176,14 +22177,15 @@ var UserOutlined = function UserOutlined(props, ref) {
 UserOutlined.displayName = 'UserOutlined';
 var UserOutlined$1 = /*#__PURE__*/React.forwardRef(UserOutlined);
 
-var css_248z = "/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */\n/* stylelint-disable no-duplicate-selectors */\n/* stylelint-disable */\n/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */\n.container > * {\n  margin-top: 8px;\n  background-color: #fff;\n  border-radius: 4px;\n  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);\n}\n@media screen and (max-width: 480px) {\n  .container {\n    width: 100% !important;\n  }\n  .container > * {\n    border-radius: 0 !important;\n  }\n}\n";
+var css_248z = "/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */\n/* stylelint-disable no-duplicate-selectors */\n/* stylelint-disable */\n/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */\n.index_container__27l-z > * {\n  margin-top: 8px;\n  background-color: #fff;\n  border-radius: 4px;\n  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);\n}\n@media screen and (max-width: 480px) {\n  .index_container__27l-z {\n    width: 100% !important;\n  }\n  .index_container__27l-z > * {\n    border-radius: 0 !important;\n  }\n}\n";
+var styles = {"container":"index_container__27l-z"};
 styleInject(css_248z);
 
 const HeaderDropdown = ({
   overlayClassName: cls,
   ...restProps
 }) => /*#__PURE__*/React__default.createElement(Dropdown$1, _extends$4({
-  overlayClassName: classNames(css_248z.container, cls)
+  overlayClassName: classNames(styles.container, cls)
 }, restProps));
 
 /* eslint no-useless-escape:0 import/prefer-default-export:0 */
@@ -22222,7 +22224,7 @@ const AvatarDropdown = ({
     }
   }, [currentUser, onUserlogout]);
   const loading = /*#__PURE__*/React__default.createElement("span", {
-    className: `${css_248z$1.action} ${css_248z$1.account}`
+    className: `${styles$1.action} ${styles$1.account}`
   }, /*#__PURE__*/React__default.createElement(Spin$1, {
     size: "small",
     style: {
@@ -22240,7 +22242,7 @@ const AvatarDropdown = ({
   }
 
   const menuHeaderDropdown = /*#__PURE__*/React__default.createElement(Menu$1, {
-    className: css_248z$1.menu,
+    className: styles$1.menu,
     onClick: onMenuClick
   }, /*#__PURE__*/React__default.createElement(Menu$1.Item, {
     key: "logout"
@@ -22250,9 +22252,9 @@ const AvatarDropdown = ({
   return /*#__PURE__*/React__default.createElement(HeaderDropdown, {
     overlay: menuHeaderDropdown
   }, /*#__PURE__*/React__default.createElement("span", {
-    className: `${css_248z$1.action} ${css_248z$1.account}`
+    className: `${styles$1.action} ${styles$1.account}`
   }, /*#__PURE__*/React__default.createElement(Avatar$1, {
-    className: css_248z$1.avatar,
+    className: styles$1.avatar,
     icon: /*#__PURE__*/React__default.createElement(UserOutlined$1, null),
     alt: "avatar"
   }), currentUser.name));
@@ -22283,7 +22285,7 @@ const SelectedLang = ({
     overlay: menu,
     placement: "bottomCenter"
   }, /*#__PURE__*/React__default.createElement("span", {
-    className: css_248z$1.action
+    className: styles$1.action
   }, /*#__PURE__*/React__default.createElement(GlobalOutlined$1, null)));
 };
 
@@ -22300,7 +22302,7 @@ const ServiceMenu = ({
     };
   });
   return /*#__PURE__*/React__default.createElement(Menu$1, {
-    className: css_248z$1.shadow,
+    className: styles$1.shadow,
     mode: "inline"
   }, /*#__PURE__*/React__default.createElement(Menu$1.Item, {
     icon: /*#__PURE__*/React__default.createElement(HomeOutlined$1, null),
@@ -22330,7 +22332,7 @@ const ExplorationDropdown = ({
     }),
     placement: "bottomRight"
   }, /*#__PURE__*/React__default.createElement("span", {
-    className: css_248z$1.action
+    className: styles$1.action
   }, /*#__PURE__*/React__default.createElement(MoreOutlined$1, null)));
 };
 
@@ -22366,7 +22368,7 @@ const InfoDropDwon = ({
     }),
     placement: "bottomRight"
   }, /*#__PURE__*/React__default.createElement("span", {
-    className: css_248z$1.action
+    className: styles$1.action
   }, /*#__PURE__*/React__default.createElement(QuestionCircleOutlined$1, null)));
 };
 
@@ -22391,10 +22393,10 @@ const GlobalHeaderRight = ({
   //   return null;
   // }
   // const { navTheme, layout } = initialState.settings || {};
-  let className = css_248z$1.right;
+  let className = styles$1.right;
 
   if (navTheme === 'dark' && layout === 'top' || layout === 'mix') {
-    className = `${css_248z$1.right}  ${css_248z$1.dark}`;
+    className = `${styles$1.right}  ${styles$1.dark}`;
   }
 
   return /*#__PURE__*/React__default.createElement(Space$1, {

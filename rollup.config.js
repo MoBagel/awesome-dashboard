@@ -24,6 +24,7 @@ export default {
   }],
   plugins: [
     postcss({
+      modules: true,
       extensions: [".css"],
       use: [['less', {
         javascriptEnabled: true,
