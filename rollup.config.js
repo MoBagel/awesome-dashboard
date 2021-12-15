@@ -12,7 +12,7 @@ import NpmImport from 'less-plugin-npm-import';
 import pkg from './package.json';
 
 export default {
-  input: "src/RightContent/index.tsx",
+  input: "src/index.tsx",
   output: [{
     file: pkg.main, // 會去讀取 package.json 的 main 欄位
     format: 'cjs', // Common JS
@@ -39,9 +39,6 @@ export default {
       include: ['*.js+(|x)', '**/*.js+(|x)'],
       exclude: ['coverage', 'config', 'dist', 'node_modules/**', '*.test.{js+(|x), ts+(|x)}', '**/*.test.{js+(|x), ts+(|x)}'],
     }),
-    // nodeResolve({
-    //   extensions: [".js"],
-    // }),
     replace({
       'process.env.NODE_ENV': JSON.stringify( 'development' )
     }),

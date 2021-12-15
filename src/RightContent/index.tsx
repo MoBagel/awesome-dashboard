@@ -15,7 +15,19 @@ const ENVTagColor = {
   pre: '#87d068'
 };
 
-const GlobalHeaderRight: React.FC = ({
+export interface HeaderProps {
+  layout: string;
+  navTheme?: string;
+  versionTag: string;
+  text?: string;
+  onUserlogout: () => {};
+  formatMessage: () => {};
+  currentUser: { name: string };
+  onTracking: () => {};
+  services: { externalDomain: string; serviceName: string }[];
+}
+
+const GlobalHeaderRight: React.FC<HeaderProps> = ({
   layout,
   navTheme,
   versionTag,
@@ -25,13 +37,6 @@ const GlobalHeaderRight: React.FC = ({
   onTracking,
   services
 }) => {
-  // const { initialState } = useModel('@@initialState');
-
-  // if (!initialState || !initialState.settings) {
-  //   return null;
-  // }
-
-  // const { navTheme, layout } = initialState.settings || {};
   let className = styles.right;
 
   if ((navTheme === 'dark' && layout === 'top') || layout === 'mix') {
