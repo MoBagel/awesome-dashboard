@@ -4,8 +4,12 @@ import styles from './index.less';
 import { MoreOutlined, HomeOutlined } from '@ant-design/icons';
 import HeaderDropdown from './HeaderDropdown';
 import { getSsoUrl } from '../utils/utils';
+import type { ServiceProp, FormatMessageProp } from './index.types';
 
-const ServiceMenu = ({ services, formatMessage }) => {
+const ServiceMenu: React.FC<{ services: ServiceProp[]; formatMessage: FormatMessageProp }> = ({
+  services,
+  formatMessage
+}) => {
   const appList = services.map((service) => {
     return {
       name: formatMessage({ id: `common.service.${service.serviceName}` }),
@@ -18,7 +22,8 @@ const ServiceMenu = ({ services, formatMessage }) => {
         icon={<HomeOutlined />}
         onClick={() => {
           window.location.assign(`${getSsoUrl()}`);
-        }}>
+        }}
+      >
         {formatMessage({ id: 'common.nav.home' })}
       </Menu.Item>
       {appList.map((app) => {
@@ -27,7 +32,8 @@ const ServiceMenu = ({ services, formatMessage }) => {
             key={app.name}
             onClick={() => {
               window.open(app.url);
-            }}>
+            }}
+          >
             {app.name}
           </Menu.Item>
         );
@@ -36,7 +42,10 @@ const ServiceMenu = ({ services, formatMessage }) => {
   );
 };
 
-const ExplorationDropdown = ({ services, formatMessage }) => {
+const ExplorationDropdown: React.FC<{ services: ServiceProp[]; formatMessage: FormatMessageProp }> = ({
+  services,
+  formatMessage
+}) => {
   return (
     <HeaderDropdown overlay={<ServiceMenu services={services} formatMessage={formatMessage} />} placement='bottomRight'>
       <span className={styles.action}>

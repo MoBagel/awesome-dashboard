@@ -17,7 +17,9 @@ const DEFAULT_LANGS = [
   }
 ];
 
-const SelectedLang: React.FC = ({ onUpdateLocale }) => {
+const SelectedLang: React.FC<{ onUpdateLocale: (lang: string, realReload?: boolean) => void }> = ({
+  onUpdateLocale
+}) => {
   const itemClick = (item: MenuInfo) => {
     onUpdateLocale(item?.key, false);
   };

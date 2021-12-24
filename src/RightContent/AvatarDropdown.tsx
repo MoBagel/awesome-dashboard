@@ -7,14 +7,20 @@ import styles from './index.less';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import { getSsoUrl } from '../utils/utils';
 
+import type { FormatMessageProp, UserlogoutProps } from './index.types';
+
 export type GlobalHeaderRightProps = {
-  menu?: boolean;
+  onUserlogout: UserlogoutProps;
+  formatMessage: FormatMessageProp;
+  currentUser: {
+    name: string;
+  };
 };
 
 /**
  * 退出登录，并且将当前的 url 保存
  */
-const loginOut = async (onUserlogout) => {
+const loginOut: (onUserlogout: UserlogoutProps) => Promise<void> = async (onUserlogout) => {
   await onUserlogout();
   window.location.assign(`${getSsoUrl()}/login`);
 };

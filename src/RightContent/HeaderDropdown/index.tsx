@@ -8,6 +8,7 @@ export type HeaderDropdownProps = {
   overlayClassName?: string;
   overlay: React.ReactNode | (() => React.ReactNode) | any;
   placement?: 'bottomLeft' | 'bottomRight' | 'topLeft' | 'topCenter' | 'topRight' | 'bottomCenter';
+  // eslint-disable-next-line no-undef
 } & Omit<DropDownProps, 'overlay'>;
 
 const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ overlayClassName: cls, ...restProps }) => (

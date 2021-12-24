@@ -1,5 +1,4 @@
-import RightContent from './RightContent';
-import { Button } from './Button';
+import { HeaderRight, HeaderRightProps } from './RightContent';
 
-export { RightContent, Button };
-export type { IButtonProps } from './Button';
+export { HeaderRight };
+export type { HeaderRightProps };

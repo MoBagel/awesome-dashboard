@@ -7,7 +7,23 @@ import messages from '../locales/en.json';
 export const decorators = [
   (Story) => (
     <IntlProvider messages={messages} locale={'en'} defaultLocale={'en'}>
-        <Story />
+      <Story />
     </IntlProvider>
-  ),
+  )
 ];
+
+export const parameters = {
+  backgrounds: {
+    default: 'mobagel',
+    values: [
+      {
+        name: 'mobagel',
+        value: '#f6f9fc'
+      },
+      {
+        name: 'white',
+        value: '#fff'
+      }
+    ]
+  }
+};
