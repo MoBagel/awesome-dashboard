@@ -11,13 +11,18 @@
     "storybook": "start-storybook -s ./public -p 9090",
     "build-storybook": "build-storybook -c .storybook -s ./public -o built-storybook",
     "storybook-production": "node .storybook/server.js",
-    "lint-staged:js": "eslint 'src/**/*.ts?(x)'",
+    "lint-staged:js": "eslint 'src/**/*.{js,jsx,ts,tsx}?(x)'",
     "build": "rimraf dist && NODE_ENV=production BABEL_ENV=production rollup -c",
     "precommit": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest",
+    "test-cov": "jest --coverage"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint-staged:js",
+      "jest --bail --findRelatedTests"
+    ],
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
       "prettier --write"
     ]
@@ -61,6 +66,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.27.1",
     "husky": "^7.0.4",
+    "jest": "^27.4.5",
     "less": "^3.12.2",
     "less-loader": "4.1.0",
     "less-plugin-npm-import": "^2.1.0",

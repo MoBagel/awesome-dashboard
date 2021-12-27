@@ -6,6 +6,7 @@ import styles from './index.less';
 
 export type HeaderDropdownProps = {
   overlayClassName?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   overlay: React.ReactNode | (() => React.ReactNode) | any;
   placement?: 'bottomLeft' | 'bottomRight' | 'topLeft' | 'topCenter' | 'topRight' | 'bottomCenter';
   // eslint-disable-next-line no-undef
