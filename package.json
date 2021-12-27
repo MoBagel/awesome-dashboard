@@ -51,6 +51,7 @@
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/react": "^6.1.18",
     "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "airtable": "^0.11.1",
@@ -82,6 +83,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-typescript2": "^0.31.1",
+    "ts-jest": "^27.1.2",
     "typescript": "4.2.4"
   },
   "release": {
