@@ -1,6 +1,6 @@
 {
-  "name": "npm-test-build-mb",
-  "version": "0.0.0-beta.8",
+  "name": "awesome-dashboard",
+  "version": "0.0.0-beta.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -28,8 +28,11 @@
     ]
   },
   "peerDependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.18.2",
     "react": "^17.x",
-    "react-dom": "^17.x"
+    "react-dom": "^17.x",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -55,7 +58,7 @@
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "airtable": "^0.11.1",
-    "antd": "^4.17.3",
+    "antd": "^4.18.2",
     "autoprefixer": "^10.4.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
@@ -78,11 +81,13 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.61.1",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.22",
     "rollup-plugin-less": "^1.1.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-typescript2": "^0.31.1",
+    "styled-components": "^5.3.3",
     "ts-jest": "^27.1.2",
     "typescript": "4.2.4"
   },

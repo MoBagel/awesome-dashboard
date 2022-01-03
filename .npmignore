@@ -8,3 +8,10 @@ built-storybook/*
 .eslintignore
 .eslintrc.json
 .prettierrc
+rollup.config.js
+.husky
+jest.config.js
+tsconfig.json
+.eslintrc
+locales/*
+.babelrc.js
