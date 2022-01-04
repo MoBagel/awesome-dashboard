@@ -31,3 +31,5 @@ import type { NotificationBarProps } from 'awesome-dashboard';
 ### Storybook
 
 You can see component's props on storybook or you can open component's type file to see what prop you can pass.
+
+Link: [Storybook](https://mobagel.github.io/awesome-dashboard/ "Storybook")
