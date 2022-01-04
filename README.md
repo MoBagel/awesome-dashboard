@@ -38,6 +38,9 @@ Link: [Storybook](https://mobagel.github.io/awesome-dashboard/ "Storybook")
 
 - Local deploy ( need login on local )
 ```
+// build with rollup
+yarn build
+
 // Update package.json version
 npm version [major | minor | patch]
 // major 0.0.0 -> 1.0.0
