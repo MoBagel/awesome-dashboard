@@ -19,11 +19,11 @@
     "test-cov": "jest --coverage"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
+    "src/*.{js,jsx,ts,tsx}": [
       "npm run lint-staged:js",
       "jest --bail --findRelatedTests"
     ],
-    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+    "src/*.{js,jsx,tsx,ts,less,md,json}": [
       "prettier --write"
     ]
   },
