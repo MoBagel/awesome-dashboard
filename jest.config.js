@@ -1,6 +1,6 @@
 module.exports = {
   coverageDirectory: 'coverage',
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jest-environment-jsdom',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$'
 };

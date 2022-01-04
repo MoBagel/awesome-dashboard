@@ -15,3 +15,5 @@ tsconfig.json
 .eslintrc
 locales/*
 .babelrc.js
+docs/
+README.md

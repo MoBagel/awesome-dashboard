@@ -1,8 +1,3 @@
-// {
-//   "presets": [
-//       "@babel/env"
-//   ]
-// }
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const envPreset = isDevelopment
   ? ['@babel/preset-env', { loose: true }]
@@ -53,16 +48,4 @@ module.exports = {
       },
     ],
   ],
-  'env': {
-    production: {
-      'plugins': [
-        [
-          'babel-plugin-transform-react-remove-prop-types',
-          {
-            removeImport: true,
-          },
-        ],
-      ],
-    },
-  },
 };

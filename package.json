@@ -1,6 +1,6 @@
 {
-  "name": "awesome-dashboard",
-  "version": "0.0.0-beta.1",
+  "name": "npm-test-build-mb",
+  "version": "0.0.0-beta.16",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,7 +10,6 @@
     "analyze": "ANALYZE=1 next build",
     "storybook": "start-storybook -s ./public -p 9090",
     "build-storybook": "build-storybook -c .storybook -s ./public -o doc",
-    "storybook-production": "node .storybook/server.js",
     "lint-staged:js": "eslint 'src/**/*.{js,jsx,ts,tsx}?(x)'",
     "build": "rimraf dist && NODE_ENV=production BABEL_ENV=production rollup -c",
     "precommit": "lint-staged",
@@ -27,7 +26,7 @@
       "prettier --write"
     ]
   },
-  "peerDependencies": {
+  "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.18.2",
     "react": "^17.x",
@@ -35,14 +34,11 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.5",
     "@babel/plugin-transform-runtime": "^7.16.5",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.5",
-    "@babel/register": "^7.10.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
@@ -58,12 +54,10 @@
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "airtable": "^0.11.1",
-    "antd": "^4.18.2",
     "autoprefixer": "^10.4.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-css-modules-transform": "^1.6.2",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "css-modules-require-hook": "^4.2.3",
     "dotenv": "^10.0.0",
     "eslint": "^7.6.0",
@@ -71,6 +65,7 @@
     "eslint-plugin-react": "^7.27.1",
     "husky": "^7.0.4",
     "jest": "^27.4.5",
+    "jsdom": "^19.0.0",
     "less": "^3.12.2",
     "less-loader": "4.1.0",
     "less-plugin-npm-import": "^2.1.0",
@@ -87,7 +82,6 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-typescript2": "^0.31.1",
-    "styled-components": "^5.3.3",
     "ts-jest": "^27.1.2",
     "typescript": "4.2.4"
   },

@@ -2,7 +2,6 @@ import { DEFAULT_EXTENSIONS } from '@babel/core';
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import replace from '@rollup/plugin-replace';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2'
 import typescriptEngine from 'typescript';
@@ -14,8 +13,8 @@ import pkg from './package.json';
 export default {
   input: "src/index.tsx",
   output: [{
-    file: pkg.main, // 會去讀取 package.json 的 main 欄位
-    format: 'cjs', // Common JS
+    file: pkg.main,
+    format: 'cjs',
     exports: 'named',
   },{
     file: pkg.module,
@@ -37,10 +36,7 @@ export default {
     typescript({
       typescript: typescriptEngine,
       include: ['*.js+(|x)', '**/*.js+(|x)'],
-      exclude: ['coverage', 'config', 'dist', 'node_modules/**', '*.test.{js+(|x), ts+(|x)}', '**/*.test.{js+(|x), ts+(|x)}'],
-    }),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify( 'development' )
+      exclude: ['docs', 'dist', '**/stories', '*.stories.{js+(|x), ts+(|x)}', 'node_modules/**', '*.test.{js+(|x), ts+(|x)}', '**/*.test.{js+(|x), ts+(|x)}'],
     }),
     commonjs(),
     babel({
