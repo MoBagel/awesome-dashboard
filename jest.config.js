@@ -5,5 +5,8 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   transform: {
     '^.+\\.(t|j)sx?$': 'ts-jest',
+  },
+  moduleNameMapper: {
+    "\\.(css|less)$": "identity-obj-proxy"
   }
 };
