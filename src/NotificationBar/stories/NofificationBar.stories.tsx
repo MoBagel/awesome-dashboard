@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react';
+import type { Story, Meta } from '@storybook/react';
 import React from 'react';
 import { NotificationBar } from '../NotifticationBar';
 import type { NotificationBarProps } from '../NotifticationBar';
