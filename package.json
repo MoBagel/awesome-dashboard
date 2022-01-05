@@ -1,11 +1,11 @@
 {
-  "name": "npm-test-build-mb",
-  "version": "0.0.0-beta.16",
+  "name": "awesome-dashboard",
+  "version": "0.0.0-beta.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "scripts": {
     "analyze": "ANALYZE=1 next build",
     "storybook": "start-storybook -s ./public -p 9090",
@@ -92,6 +92,10 @@
     "stylelint": "^14.2.0",
     "ts-jest": "^27.1.2",
     "typescript": "4.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoBagel/awesome-dashboard"
   },
   "release": {
     "analyzeCommits": "simple-commit-message"
