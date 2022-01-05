@@ -18,6 +18,7 @@
     "test-cov": "jest --coverage"
   },
   "lint-staged": {
+    "src/*.less": "stylelint --syntax less",
     "src/*.{js,jsx,ts,tsx}": [
       "npm run lint-staged:js",
       "jest --bail --findRelatedTests"
@@ -53,6 +54,7 @@
     "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
+    "@umijs/fabric": "^2.10.0",
     "airtable": "^0.11.1",
     "autoprefixer": "^10.4.0",
     "babel-eslint": "^10.0.3",
@@ -61,8 +63,11 @@
     "css-modules-require-hook": "^4.2.3",
     "dotenv": "^10.0.0",
     "eslint": "^7.6.0",
+    "eslint-plugin-jest": "^25.3.4",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-unicorn": "^40.0.0",
     "husky": "^7.0.4",
     "jest": "^27.4.5",
     "jsdom": "^19.0.0",
@@ -82,6 +87,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-typescript2": "^0.31.1",
+    "stylelint": "^14.2.0",
     "ts-jest": "^27.1.2",
     "typescript": "4.2.4"
   },

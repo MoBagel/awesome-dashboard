@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Typography, Button, ButtonProps } from 'antd';
+import { Typography, Button } from 'antd';
+import type { ButtonProps } from 'antd';
 
 import {
   NotificationContainer,
@@ -8,7 +9,7 @@ import {
   NoticationBtnContainer,
   StyledButton,
   StyledInfoCircleOutlined,
-  StyledCloseOutlined
+  StyledCloseOutlined,
 } from './styles';
 
 const { Text } = Typography;
@@ -37,23 +38,27 @@ export const NotificationBar: React.FC<NotificationBarProps> = ({
   confirmButtonProp,
   isShowWarningIcon = true,
   isShowCloseButton = true,
-  styles
+  styles,
 }) => {
   return (
-    <NotificationContainer ref={elemRef} className='notification-container' styles={styles}>
+    <NotificationContainer ref={elemRef} className="notification-container" styles={styles}>
       {isShowWarningIcon && <StyledInfoCircleOutlined />}
-      <NoticationTextContainer className='message-container'>
+      <NoticationTextContainer className="message-container">
         <Text>{message}</Text>
       </NoticationTextContainer>
-      <NoticationBtnContainer className='button-container'>
-        <StyledButton {...cancelButtonProp} className='cancel-btn'>
-          {cancelButtonLabel}
-        </StyledButton>
-        <StyledButton type='primary' {...confirmButtonProp} className='confirm-btn'>
-          {confirmButtonLabel}
-        </StyledButton>
+      <NoticationBtnContainer className="button-container">
+        {Boolean(cancelButtonLabel) && (
+          <StyledButton {...cancelButtonProp} className="cancel-btn">
+            {cancelButtonLabel}
+          </StyledButton>
+        )}
+        {Boolean(confirmButtonLabel) && (
+          <StyledButton type="primary" {...confirmButtonProp} className="confirm-btn">
+            {confirmButtonLabel}
+          </StyledButton>
+        )}
         {isShowCloseButton && (
-          <Button onClick={onCloseBanner} type='link' shape='circle' className='close-btn'>
+          <Button onClick={onCloseBanner} type="link" shape="circle" className="close-btn">
             <StyledCloseOutlined />
           </Button>
         )}

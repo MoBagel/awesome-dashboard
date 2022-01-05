@@ -1,11 +1,12 @@
 import { Story, Meta } from '@storybook/react';
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { HeaderRight, HeaderRightProps } from '../HeaderRight';
+import { HeaderRight } from '../HeaderRight';
+import type { HeaderRightProps } from '../HeaderRight';
 
 const HeaderStory: Meta = {
-  title: 'Example/HeaderRight',
-  component: HeaderRight
+  title: 'Test/HeaderRight',
+  component: HeaderRight,
 };
 
 export default HeaderStory;
@@ -24,5 +25,5 @@ Primary.args = {
   versionTag: 'dev',
   currentUser: { name: 'test' },
   services: [],
-  formatMessage: ({ id }) => id
+  formatMessage: ({ id }) => id,
 };

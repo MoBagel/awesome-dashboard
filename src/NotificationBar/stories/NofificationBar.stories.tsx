@@ -1,10 +1,11 @@
 import { Story, Meta } from '@storybook/react';
 import React from 'react';
-import { NotificationBar, NotificationBarProps } from '../NotifticationBar';
+import { NotificationBar } from '../NotifticationBar';
+import type { NotificationBarProps } from '../NotifticationBar';
 
 const NotifticationBarStory: Meta = {
   title: 'Example/NotifticationBar',
-  component: NotificationBar
+  component: NotificationBar,
 };
 
 export default NotifticationBarStory;
@@ -25,5 +26,5 @@ Example.args = {
   confirmButtonProp: {},
   isShowCloseButton: true,
   isShowWarningIcon: true,
-  styles: `background-color: #eee;`
+  styles: `background-color: #eee;`,
 };

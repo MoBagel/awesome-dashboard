@@ -20,14 +20,6 @@ or
 npm install antd
 ```
 
-### How to use
-
-```
-import { NotificationBar } from 'awesome-dashboard';
-
-import type { NotificationBarProps } from 'awesome-dashboard';
-```
-
 ### Storybook
 
 You can see component's props on storybook or you can open component's type file to see what prop you can pass.

@@ -36,10 +36,12 @@ export const NotificationContainer = styled.div`
 export const NoticationTextContainer = styled.div`
   display: flex;
   padding: 0 32px;
-  flex-grow: 1;
+  flex: 1 1 auto;
   overflow: hidden;
   > .ant-typography {
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
 

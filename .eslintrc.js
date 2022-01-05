@@ -1,16 +1,13 @@
 module.exports = {
   // 'import/prefer-default-export': 2,
+  
   extends: [
     "eslint:recommended",
     require.resolve('@umijs/fabric/dist/eslint')
   ],
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'], // Your TypeScript files extension
-      parserOptions: {
-        project: ['./tsconfig.json'], // Specify it only for TypeScript files
-      },
-    },
-  ],
-  parser: '@typescript-eslint/parser',
+  globals: {
+    ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION: true,
+    page: true,
+    REACT_APP_ENV: true,
+  },
 };

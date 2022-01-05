@@ -16,5 +16,4 @@ tsconfig.json
 locales/*
 .babelrc.js
 docs/
-README.md
 coverage/
