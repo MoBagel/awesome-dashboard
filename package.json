@@ -15,7 +15,8 @@
     "precommit": "lint-staged",
     "prepare": "husky install",
     "test": "jest",
-    "test-cov": "jest --coverage"
+    "test-cov": "jest --coverage",
+    "i18n:fetch": "node ./i18n.js"
   },
   "lint-staged": {
     "src/*.less": "stylelint --syntax less",

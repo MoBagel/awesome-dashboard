@@ -20,17 +20,21 @@ or
 npm install antd
 ```
 
-### Storybook
+### How to Develop
 
-You can see component's props on storybook or you can open component's type file to see what prop you can pass.
+#### Start local environment
 
-Link: [Storybook](https://mobagel.github.io/awesome-dashboard/ "Storybook")
+We can develop component on `storybook`.
 
-### Update package version
-
-- Local deploy ( need login on local )
 ```
-// build with rollup
+yarn 
+
+// start storybook
+yarn storybook
+```
+
+- After you finish component, deploy plugin to npm.
+```
 yarn build
 
 // Update package.json version
@@ -39,6 +43,29 @@ npm version [major | minor | patch]
 // minor 0.0.0 -> 0.1.0
 // patch 0.0.0 -> 0.0.1
 
-// you need to login ur npm account to publish
 npm publish
 ```
+
+
+If you need to build component working with i18n.
+
+- Add .env file fill airtable key
+```
+# AirTable parameters, plz check these in airtable doc
+AIRTABLE_KEY="key6GROo24nOw13pZ"
+AIRTABLE_I18N_BASE_COMMON="appguIubkT0Hrh2Pb"
+AIRTABLE_I18N_TABLE_COMMON="8ndpoint_common"
+AIRTABLE_I18N_VIEW_COMMON="Grid view"
+```
+
+- Install lang
+```
+// download lang.json
+yarn i18n:fetch
+```
+
+### Storybook
+
+You can see component's props on storybook or you can open component's type file to see what prop you can pass.
+
+Link: [Storybook](https://mobagel.github.io/awesome-dashboard/ "Storybook")

@@ -20,7 +20,6 @@ export interface HeaderRightProps {
   layout: 'top' | 'mix';
   navTheme?: 'dark';
   versionTag: 'dev' | 'test' | 'pre';
-  text?: string;
   onUserlogout: UserlogoutProps;
   formatMessage: FormatMessageProp;
   currentUser: { name: string };

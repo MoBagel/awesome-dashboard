@@ -2,11 +2,11 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import { IntlProvider } from 'react-intl';
 
-import messages from '../locales/en.json';
+import messages from '../locales/en-US.json';
 
 export const decorators = [
   (Story) => (
-    <IntlProvider messages={messages} locale={'en'} defaultLocale={'en'}>
+    <IntlProvider messages={messages} locale={'en-US'} defaultLocale={'en-US'}>
       <Story />
     </IntlProvider>
   )

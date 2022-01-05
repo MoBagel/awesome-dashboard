@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react';
+import type { Story, Meta } from '@storybook/react';
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { HeaderRight } from '../HeaderRight';
