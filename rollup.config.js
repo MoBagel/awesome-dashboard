@@ -16,7 +16,7 @@ export default {
     file: pkg.main,
     format: 'cjs',
     exports: 'named',
-  },{
+  }, {
     file: pkg.module,
     format: 'es',
     exports: 'named',
@@ -27,7 +27,7 @@ export default {
       extensions: [".css"],
       use: [['less', {
         javascriptEnabled: true,
-        plugins: [new NpmImport({prefix: '~'})],
+        plugins: [new NpmImport({ prefix: '~' })],
       }]],
     }),
     external({
@@ -36,7 +36,7 @@ export default {
     typescript({
       typescript: typescriptEngine,
       include: ['*.js+(|x)', '**/*.js+(|x)'],
-      exclude: ['docs', 'dist', '**/stories', '*.stories.{js+(|x), ts+(|x)}', 'node_modules/**', '*.test.{js+(|x), ts+(|x)}', '**/*.test.{js+(|x), ts+(|x)}'],
+      exclude: ['**/stories', '*.stories.{js+(|x), ts+(|x)}', "**/__test__", "**/*.test.{js+(|x), ts+(|x)}", 'node_modules/**',]
     }),
     commonjs(),
     babel({

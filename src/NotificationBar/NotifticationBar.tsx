@@ -15,16 +15,16 @@ import {
 const { Text } = Typography;
 
 export interface NotificationBarProps {
-  elemRef: HTMLDivElement | null | undefined;
+  elemRef?: HTMLDivElement | null;
   onCloseBanner: () => void;
   message: string;
   cancelButtonLabel: string;
-  cancelButtonProp: ButtonProps;
+  cancelButtonProp?: ButtonProps;
   confirmButtonLabel: string;
-  confirmButtonProp: ButtonProps;
-  isShowWarningIcon: boolean;
-  isShowCloseButton: boolean;
-  styles: string;
+  confirmButtonProp?: ButtonProps;
+  isShowWarningIcon?: boolean;
+  isShowCloseButton?: boolean;
+  styles?: string;
 }
 
 export const NotificationBar: React.FC<NotificationBarProps> = ({
