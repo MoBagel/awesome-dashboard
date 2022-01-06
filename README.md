@@ -6,19 +6,15 @@ It's built for using on Mobagel 8ndpoint's project. We wrapped ant design's comp
 
 ### Install
 
+- Install plugin 
 ```
 yarn add awesome-dashboard
 or
 npm install awesome-dashboard
 ```
 
-- install antd
+You can open [Storybook](https://mobagel.github.io/awesome-dashboard/ "Storybook") to see which component you can use.
 
-```
-yarn add antd
-or
-npm install antd
-```
 
 ### How to Develop
 
