@@ -19,7 +19,7 @@ const ENVTagColor = {
 export interface HeaderRightProps {
   layout: 'top' | 'mix';
   navTheme?: 'dark';
-  versionTag: 'dev' | 'test' | 'pre';
+  versionTag?: 'dev' | 'test' | 'pre';
   onUserlogout: UserlogoutProps;
   formatMessage: FormatMessageProp;
   currentUser: { name: string };

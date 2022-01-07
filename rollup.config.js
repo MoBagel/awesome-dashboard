@@ -5,7 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2'
 import typescriptEngine from 'typescript';
-import external from 'rollup-plugin-peer-deps-external';
+import external from 'rollup-plugin-node-externals';
 import NpmImport from 'less-plugin-npm-import';
 
 import pkg from './package.json';
@@ -31,7 +31,8 @@ export default {
       }]],
     }),
     external({
-      includeDependencies: true,
+      deps: true,
+      devDeps: true
     }),
     typescript({
       typescript: typescriptEngine,

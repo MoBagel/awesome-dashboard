@@ -13,6 +13,11 @@ or
 npm install awesome-dashboard
 ```
 
+- Install Dependency plugin ( If you didn't install in your repo )
+```
+yarn add antd react react-dom styled-components @ant-design/icons
+```
+
 You can open [Storybook](https://mobagel.github.io/awesome-dashboard/ "Storybook") to see which component you can use.
 
 
@@ -48,10 +53,10 @@ If you need to build component working with i18n.
 - Add .env file fill airtable key
 ```
 # AirTable parameters, plz check these in airtable doc
-AIRTABLE_KEY="key6GROo24nOw13pZ"
-AIRTABLE_I18N_BASE_COMMON="appguIubkT0Hrh2Pb"
-AIRTABLE_I18N_TABLE_COMMON="8ndpoint_common"
-AIRTABLE_I18N_VIEW_COMMON="Grid view"
+AIRTABLE_KEY=
+AIRTABLE_I18N_BASE_COMMON=
+AIRTABLE_I18N_TABLE_COMMON=
+AIRTABLE_I18N_VIEW_COMMON=
 ```
 
 - Install lang

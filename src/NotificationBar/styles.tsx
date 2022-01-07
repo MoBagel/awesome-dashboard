@@ -48,7 +48,7 @@ export const NoticationTextContainer = styled.div`
 export const NoticationBtnContainer = styled.div`
   display: flex;
   align-items: center;
-  & button {
+  & .ant-btn {
     height: 36px;
     margin-right: 16px;
   }
