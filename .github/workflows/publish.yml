@@ -1,8 +1,9 @@
-name: Publish Package to npmjs
+name: publish
+
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+  release:
+    types:
+      - created
 jobs:
   test:
     runs-on: ubuntu-latest
