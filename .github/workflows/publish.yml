@@ -14,21 +14,7 @@ jobs:
           node-version: 16
       - run: yarn
       - run: yarn test
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16
       - run: yarn build
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16
       - run: npm publish --access public
         env:
           token: ${{ secrets.NPM_TOKEN }}
