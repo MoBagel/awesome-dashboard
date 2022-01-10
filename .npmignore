@@ -4,6 +4,7 @@ webpack.config.js
 coverage/*
 build/*
 built-storybook/*
+.env
 .eslintignore
 .eslintrc.json
 .prettierrc
