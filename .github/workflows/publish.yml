@@ -17,6 +17,4 @@ jobs:
       - run: yarn build
       - run: npm publish --access public
         env:
-          token: ${{ secrets.NPM_TOKEN }}
-      - run: |
-          echo 'publish success!'
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
