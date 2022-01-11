@@ -17,3 +17,9 @@ locales/*
 .babelrc.js
 docs/
 coverage/
+.github
+storybook-static/*
+i18n.js
+.prettierrc.js
+.stylelintrc.js
+.eslintrc.js
