@@ -5,7 +5,7 @@ import { HeaderRight } from '../HeaderRight';
 import type { HeaderRightProps } from '../HeaderRight';
 
 const HeaderStory: Meta = {
-  title: 'Test/HeaderRight',
+  title: 'Example/HeaderRight',
   component: HeaderRight,
 };
 
@@ -24,6 +24,19 @@ Primary.args = {
   navTheme: undefined,
   versionTag: 'dev',
   currentUser: { name: 'test' },
-  services: [],
+  services: [
+    {
+      externalDomain: 'https://google.com',
+      serviceName: 'restock',
+      onClick: () => {
+        alert('click');
+      },
+    },
+    {
+      externalDomain: 'https://www.google.com.tw/',
+      serviceName: 'repurchase',
+    },
+  ],
   formatMessage: ({ id }) => id,
+  onTracking: () => {}
 };
