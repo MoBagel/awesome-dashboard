@@ -13,13 +13,13 @@ export type SiderTheme = 'light' | 'dark';
 const ENVTagColor = {
   dev: 'orange',
   test: 'green',
-  pre: '#87d068'
+  pre: '#87d068',
 };
 
 export interface HeaderRightProps {
   layout: 'top' | 'mix';
   navTheme?: 'dark';
-  versionTag?: 'dev' | 'test' | 'pre';
+  versionTag?: 'dev' | 'test' | 'pre' | false;
   onUserlogout: UserlogoutProps;
   formatMessage: FormatMessageProp;
   currentUser: { name: string };
@@ -37,7 +37,7 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   currentUser,
   onTracking,
   services,
-  onUpdateLocale
+  onUpdateLocale,
 }) => {
   let className = styles.right;
 
@@ -47,7 +47,11 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   return (
     <Space className={className} size={32}>
       <InfoDropdown formatMessage={formatMessage} onTracking={onTracking} />
-      <ExplorationDropdown formatMessage={formatMessage} services={services} />
+      <ExplorationDropdown
+        formatMessage={formatMessage}
+        services={services}
+        onTracking={onTracking}
+      />
       <Avatar onUserlogout={onUserlogout} formatMessage={formatMessage} currentUser={currentUser} />
       {versionTag && (
         <span>

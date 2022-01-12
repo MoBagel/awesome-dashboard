@@ -6,21 +6,25 @@ import HeaderDropdown from './HeaderDropdown';
 import { getSsoUrl } from '../utils/utils';
 import type { ServiceProp, FormatMessageProp } from './index.types';
 
-const ServiceMenu: React.FC<{ services: ServiceProp[]; formatMessage: FormatMessageProp }> = ({
-  services,
-  formatMessage
-}) => {
+const ServiceMenu: React.FC<{
+  services: ServiceProp[];
+  formatMessage: FormatMessageProp;
+  onTracking: (type: string) => void;
+}> = ({ services, formatMessage, onTracking }) => {
   const appList = services.map((service) => {
     return {
       name: formatMessage({ id: `common.service.${service.serviceName}` }),
-      url: service.externalDomain
+      url: service.externalDomain,
+      onClick: service.onClick,
+      serviceName: service.serviceName,
     };
   });
   return (
-    <Menu className={styles.shadow} mode='inline'>
+    <Menu className={styles.shadow} mode="inline">
       <Menu.Item
         icon={<HomeOutlined />}
         onClick={() => {
+          onTracking('nav-home');
           window.location.assign(`${getSsoUrl()}`);
         }}
       >
@@ -31,7 +35,12 @@ const ServiceMenu: React.FC<{ services: ServiceProp[]; formatMessage: FormatMess
           <Menu.Item
             key={app.name}
             onClick={() => {
-              window.open(app.url);
+              onTracking(`nav-${app.serviceName}`);
+              if (typeof app.onClick === 'function') {
+                app.onClick();
+              } else {
+                window.open(app.url);
+              }
             }}
           >
             {app.name}
@@ -42,12 +51,18 @@ const ServiceMenu: React.FC<{ services: ServiceProp[]; formatMessage: FormatMess
   );
 };
 
-const ExplorationDropdown: React.FC<{ services: ServiceProp[]; formatMessage: FormatMessageProp }> = ({
-  services,
-  formatMessage
-}) => {
+const ExplorationDropdown: React.FC<{
+  services: ServiceProp[];
+  formatMessage: FormatMessageProp;
+  onTracking: (type: string) => void;
+}> = ({ services, formatMessage, onTracking }) => {
   return (
-    <HeaderDropdown overlay={<ServiceMenu services={services} formatMessage={formatMessage} />} placement='bottomRight'>
+    <HeaderDropdown
+      overlay={
+        <ServiceMenu services={services} formatMessage={formatMessage} onTracking={onTracking} />
+      }
+      placement="bottomRight"
+    >
       <span className={styles.action}>
         <MoreOutlined />
       </span>
