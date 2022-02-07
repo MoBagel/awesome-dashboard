@@ -9,7 +9,7 @@
   "scripts": {
     "analyze": "ANALYZE=1 next build",
     "storybook": "start-storybook -s ./public -p 9090",
-    "build-storybook": "build-storybook -c .storybook -s ./public -o docs-build",
+    "build-storybook": "build-storybook -o docs-build",
     "lint-staged:js": "eslint 'src/**/*.{js,jsx,ts,tsx}?(x)'",
     "build": "rimraf dist && NODE_ENV=production BABEL_ENV=production rollup -c",
     "precommit": "lint-staged",
