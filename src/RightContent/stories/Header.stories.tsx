@@ -23,7 +23,7 @@ Primary.args = {
   layout: 'top',
   navTheme: undefined,
   versionTag: 'dev',
-  currentUser: { name: 'test' },
+  currentUser: { name: 'test user' },
   services: [
     {
       externalDomain: 'https://google.com',
