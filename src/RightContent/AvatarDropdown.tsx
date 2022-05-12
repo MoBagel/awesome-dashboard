@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { LogoutOutlined } from '@ant-design/icons';
+import { LogoutOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Menu, Spin } from 'antd';
 import HeaderDropdown from './HeaderDropdown';
 import { UserOutlined } from '@ant-design/icons';
@@ -32,6 +32,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ onUserlogout, format
       if (key === 'logout' && currentUser) {
         loginOut(onUserlogout);
       }
+      if(key === 'setting') window.location.assign(`${getSsoUrl()}/profile`);
     },
     [currentUser, onUserlogout]
   );
@@ -58,6 +59,12 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ onUserlogout, format
 
   const menuHeaderDropdown = (
     <Menu className={styles.menu} onClick={onMenuClick}>
+      <Menu.Item key='setting'>
+        <SettingOutlined />
+        {formatMessage({
+          id: 'common.nav.settings'
+        })}
+      </Menu.Item>
       <Menu.Item key='logout'>
         <LogoutOutlined />
         {formatMessage({
