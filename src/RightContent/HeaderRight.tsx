@@ -2,7 +2,6 @@ import { Tag, Space } from 'antd';
 import React from 'react';
 import styles from './index.less';
 import Avatar from './AvatarDropdown';
-import SelectLang from './SelectLang';
 import ExplorationDropdown from './ExplorationDropdown';
 import InfoDropdown from './InfoDropdown';
 
@@ -37,7 +36,6 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   currentUser,
   onTracking,
   services,
-  onUpdateLocale,
 }) => {
   let className = styles.right;
 
@@ -58,7 +56,6 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
           <Tag color={ENVTagColor[versionTag]}>{versionTag}</Tag>
         </span>
       )}
-      <SelectLang onUpdateLocale={onUpdateLocale} />
     </Space>
   );
 };
