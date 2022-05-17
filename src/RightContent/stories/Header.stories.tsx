@@ -38,5 +38,17 @@ Primary.args = {
     },
   ],
   formatMessage: ({ id }) => id,
-  onTracking: () => {}
+  extendsAvatarDropdown: [
+    {
+      label: 'extendsAvatarDropdown',
+      onClick: () => {},
+    },
+  ],
+  extendsInfoDropdown: [
+    {
+      label: 'extendsInfoDropdown',
+      onClick: () => {},
+    },
+  ],
+  onTracking: () => {},
 };

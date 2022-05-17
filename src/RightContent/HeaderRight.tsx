@@ -5,7 +5,7 @@ import Avatar from './AvatarDropdown';
 import ExplorationDropdown from './ExplorationDropdown';
 import InfoDropdown from './InfoDropdown';
 
-import type { ServiceProp, FormatMessageProp, UserlogoutProps } from './index.types';
+import type { ServiceProp, FormatMessageProp, UserlogoutProps, DropdownProps } from './index.types';
 
 export type SiderTheme = 'light' | 'dark';
 
@@ -25,6 +25,8 @@ export interface HeaderRightProps {
   onTracking: (type: string) => void;
   services: ServiceProp[];
   onUpdateLocale: (lang: string, realReload?: boolean) => void;
+  extendsAvatarDropdown?: DropdownProps[];
+  extendsInfoDropdown?: DropdownProps[];
 }
 
 export const HeaderRight: React.FC<HeaderRightProps> = ({
@@ -36,6 +38,8 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   currentUser,
   onTracking,
   services,
+  extendsAvatarDropdown,
+  extendsInfoDropdown,
 }) => {
   let className = styles.right;
 
@@ -44,13 +48,22 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   }
   return (
     <Space className={className} size={32}>
-      <InfoDropdown formatMessage={formatMessage} onTracking={onTracking} />
+      <InfoDropdown
+        formatMessage={formatMessage}
+        onTracking={onTracking}
+        extendsInfoDropdown={extendsInfoDropdown}
+      />
       <ExplorationDropdown
         formatMessage={formatMessage}
         services={services}
         onTracking={onTracking}
       />
-      <Avatar onUserlogout={onUserlogout} formatMessage={formatMessage} currentUser={currentUser} />
+      <Avatar
+        onUserlogout={onUserlogout}
+        formatMessage={formatMessage}
+        currentUser={currentUser}
+        extendsAvatarDropdown={extendsAvatarDropdown}
+      />
       {versionTag && (
         <span>
           <Tag color={ENVTagColor[versionTag]}>{versionTag}</Tag>
