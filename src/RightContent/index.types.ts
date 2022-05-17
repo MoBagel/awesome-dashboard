@@ -15,5 +15,5 @@ export interface UserlogoutProps {
 export type DropdownProps = {
   label: string;
   onClick: () => void;
-  Icon?: HTMLElement;
+  Icon?: JSX.Element;
 };

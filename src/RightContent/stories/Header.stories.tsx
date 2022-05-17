@@ -3,6 +3,7 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import { HeaderRight } from '../HeaderRight';
 import type { HeaderRightProps } from '../HeaderRight';
+import { AppleOutlined } from '@ant-design/icons';
 
 const HeaderStory: Meta = {
   title: 'Example/HeaderRight',
@@ -42,6 +43,7 @@ Primary.args = {
     {
       label: 'extendsAvatarDropdown',
       onClick: () => {},
+      Icon: <AppleOutlined />,
     },
   ],
   extendsInfoDropdown: [
