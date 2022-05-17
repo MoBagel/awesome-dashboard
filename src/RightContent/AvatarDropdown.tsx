@@ -59,12 +59,6 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({
           id: 'common.nav.settings',
         })}
       </Menu.Item>
-      <Menu.Item key="logout" onClick={() => loginOut(onUserlogout)}>
-        <LogoutOutlined />
-        {formatMessage({
-          id: 'common.nav.logout',
-        })}
-      </Menu.Item>
       {extendsAvatarDropdown.length > 0 &&
         extendsAvatarDropdown.map(({ Icon, label, onClick }) => {
           return (
@@ -74,6 +68,12 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({
             </Menu.Item>
           );
         })}
+      <Menu.Item key="logout" onClick={() => loginOut(onUserlogout)}>
+        <LogoutOutlined />
+        {formatMessage({
+          id: 'common.nav.logout',
+        })}
+      </Menu.Item>
     </Menu>
   );
 
