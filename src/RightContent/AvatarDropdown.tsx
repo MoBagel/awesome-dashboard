@@ -1,13 +1,12 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { LogoutOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Menu, Spin } from 'antd';
 import HeaderDropdown from './HeaderDropdown';
 import { UserOutlined } from '@ant-design/icons';
 import styles from './index.less';
-import type { MenuInfo } from 'rc-menu/lib/interface';
 import { getSsoUrl } from '../utils/utils';
 
-import type { FormatMessageProp, UserlogoutProps } from './index.types';
+import type { FormatMessageProp, UserlogoutProps, DropdownProps } from './index.types';
 
 export type GlobalHeaderRightProps = {
   onUserlogout: UserlogoutProps;
@@ -15,6 +14,7 @@ export type GlobalHeaderRightProps = {
   currentUser: {
     name: string;
   };
+  extendsAvatarDropdown?: DropdownProps[];
 };
 
 /**
@@ -25,25 +25,19 @@ const loginOut: (onUserlogout: UserlogoutProps) => Promise<void> = async (onUser
   window.location.assign(`${getSsoUrl()}/login`);
 };
 
-const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ onUserlogout, formatMessage, currentUser }) => {
-  const onMenuClick = useCallback(
-    (event: MenuInfo) => {
-      const { key } = event;
-      if (key === 'logout' && currentUser) {
-        loginOut(onUserlogout);
-      }
-      if(key === 'setting') window.location.assign(`${getSsoUrl()}/profile`);
-    },
-    [currentUser, onUserlogout]
-  );
-
+const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({
+  onUserlogout,
+  formatMessage,
+  currentUser,
+  extendsAvatarDropdown = [],
+}) => {
   const loading = (
     <span className={`${styles.action} ${styles.account}`}>
       <Spin
-        size='small'
+        size="small"
         style={{
           marginLeft: 8,
-          marginRight: 8
+          marginRight: 8,
         }}
       />
     </span>
@@ -58,26 +52,35 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ onUserlogout, format
   }
 
   const menuHeaderDropdown = (
-    <Menu className={styles.menu} onClick={onMenuClick}>
-      <Menu.Item key='setting'>
+    <Menu className={styles.menu}>
+      <Menu.Item key="setting" onClick={() => window.location.assign(`${getSsoUrl()}/profile`)}>
         <SettingOutlined />
         {formatMessage({
-          id: 'common.nav.settings'
+          id: 'common.nav.settings',
         })}
       </Menu.Item>
-      <Menu.Item key='logout'>
+      <Menu.Item key="logout" onClick={() => loginOut(onUserlogout)}>
         <LogoutOutlined />
         {formatMessage({
-          id: 'common.nav.logout'
+          id: 'common.nav.logout',
         })}
       </Menu.Item>
+      {extendsAvatarDropdown.length > 0 &&
+        extendsAvatarDropdown.map(({ Icon, label, onClick }) => {
+          return (
+            <Menu.Item key="logout" onClick={onClick}>
+              {Icon || <span style={{ paddingLeft: '22px' }}> </span>}
+              {label}
+            </Menu.Item>
+          );
+        })}
     </Menu>
   );
 
   return (
     <HeaderDropdown overlay={menuHeaderDropdown}>
       <span className={`${styles.action} ${styles.account}`}>
-        <Avatar className={styles.avatar} icon={<UserOutlined />} alt='avatar' />
+        <Avatar className={styles.avatar} icon={<UserOutlined />} alt="avatar" />
         {currentUser.name}
       </span>
     </HeaderDropdown>

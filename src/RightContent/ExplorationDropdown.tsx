@@ -17,6 +17,7 @@ const ServiceMenu: React.FC<{
       url: service.externalDomain,
       onClick: service.onClick,
       serviceName: service.serviceName,
+      Icon: service.Icon,
     };
   });
   return (
@@ -43,6 +44,7 @@ const ServiceMenu: React.FC<{
               }
             }}
           >
+            {app.Icon}
             {app.name}
           </Menu.Item>
         );
