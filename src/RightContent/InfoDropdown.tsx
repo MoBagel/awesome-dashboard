@@ -3,31 +3,36 @@ import { Menu } from 'antd';
 import styles from './index.less';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import HeaderDropdown from './HeaderDropdown';
-import type { FormatMessageProp, DropdownProps } from './index.types';
+import type { FormatMessageProp, DropdownProps, infoHiddenListProp } from './index.types';
 
 const QuestionMenu: React.FC<{
   onTracking: (type: string) => void;
   formatMessage: FormatMessageProp;
   extendsInfoDropdown?: DropdownProps[];
-}> = ({ formatMessage, onTracking, extendsInfoDropdown = [] }) => {
+  infoHiddenList?: infoHiddenListProp[];
+}> = ({ formatMessage, onTracking, extendsInfoDropdown = [], infoHiddenList = [] }) => {
   return (
     <Menu>
-      <Menu.Item
-        onClick={() => {
-          onTracking('contact');
-          window.open('https://www.8ndpoint.com/contact');
-        }}
-      >
-        {formatMessage({ id: 'common.nav.contact' })}
-      </Menu.Item>
-      <Menu.Item
-        onClick={() => {
-          onTracking('faq');
-          window.open('https://www.8ndpoint.com/faq');
-        }}
-      >
-        {formatMessage({ id: 'common.nav.faq' })}
-      </Menu.Item>
+      {!infoHiddenList.includes('contact') && (
+        <Menu.Item
+          onClick={() => {
+            onTracking('contact');
+            window.open('https://www.8ndpoint.com/contact');
+          }}
+        >
+          {formatMessage({ id: 'common.nav.contact' })}
+        </Menu.Item>
+      )}
+      {!infoHiddenList.includes('faq') && (
+        <Menu.Item
+          onClick={() => {
+            onTracking('faq');
+            window.open('https://www.8ndpoint.com/faq');
+          }}
+        >
+          {formatMessage({ id: 'common.nav.faq' })}
+        </Menu.Item>
+      )}
       {extendsInfoDropdown.length > 0 &&
         extendsInfoDropdown.map(({ Icon, label, onClick }) => {
           return (
@@ -45,7 +50,15 @@ const InfoDropDwon: React.FC<{
   onTracking: (type: string) => void;
   formatMessage: FormatMessageProp;
   extendsInfoDropdown?: DropdownProps[];
-}> = ({ formatMessage, onTracking, extendsInfoDropdown }) => {
+  infoHiddenList?: infoHiddenListProp[];
+}> = ({ formatMessage, onTracking, extendsInfoDropdown = [], infoHiddenList = [] }) => {
+  if (
+    extendsInfoDropdown.length === 0 &&
+    infoHiddenList.includes('faq') &&
+    infoHiddenList.includes('contact')
+  ) {
+    return null;
+  }
   return (
     <HeaderDropdown
       overlay={
@@ -53,6 +66,7 @@ const InfoDropDwon: React.FC<{
           formatMessage={formatMessage}
           onTracking={onTracking}
           extendsInfoDropdown={extendsInfoDropdown}
+          infoHiddenList={infoHiddenList}
         />
       }
       placement="bottomRight"

@@ -4,13 +4,14 @@ import styles from './index.less';
 import { MoreOutlined, HomeOutlined } from '@ant-design/icons';
 import HeaderDropdown from './HeaderDropdown';
 import { getSsoUrl } from '../utils/utils';
-import type { ServiceProp, FormatMessageProp } from './index.types';
+import type { ServiceProp, FormatMessageProp, exploreHiddenListProp } from './index.types';
 
 const ServiceMenu: React.FC<{
   services: ServiceProp[];
   formatMessage: FormatMessageProp;
   onTracking: (type: string) => void;
-}> = ({ services, formatMessage, onTracking }) => {
+  exploreHiddenList?: exploreHiddenListProp[];
+}> = ({ services, formatMessage, onTracking, exploreHiddenList = [] }) => {
   const appList = services.map((service) => {
     return {
       name: formatMessage({ id: `common.service.${service.serviceName}` }),
@@ -22,15 +23,17 @@ const ServiceMenu: React.FC<{
   });
   return (
     <Menu className={styles.shadow} mode="inline">
-      <Menu.Item
-        icon={<HomeOutlined />}
-        onClick={() => {
-          onTracking('nav-home');
-          window.location.assign(`${getSsoUrl()}`);
-        }}
-      >
-        {formatMessage({ id: 'common.nav.home' })}
-      </Menu.Item>
+      {!exploreHiddenList.includes('home') && (
+        <Menu.Item
+          icon={<HomeOutlined />}
+          onClick={() => {
+            onTracking('nav-home');
+            window.location.assign(`${getSsoUrl()}`);
+          }}
+        >
+          {formatMessage({ id: 'common.nav.home' })}
+        </Menu.Item>
+      )}
       {appList.map((app) => {
         return (
           <Menu.Item
@@ -57,11 +60,20 @@ const ExplorationDropdown: React.FC<{
   services: ServiceProp[];
   formatMessage: FormatMessageProp;
   onTracking: (type: string) => void;
-}> = ({ services, formatMessage, onTracking }) => {
+  exploreHiddenList?: exploreHiddenListProp[];
+}> = ({ services = [], formatMessage, onTracking, exploreHiddenList = [] }) => {
+  if (services.length === 0 && exploreHiddenList.includes('home')) {
+    return null;
+  }
   return (
     <HeaderDropdown
       overlay={
-        <ServiceMenu services={services} formatMessage={formatMessage} onTracking={onTracking} />
+        <ServiceMenu
+          exploreHiddenList={exploreHiddenList}
+          services={services}
+          formatMessage={formatMessage}
+          onTracking={onTracking}
+        />
       }
       placement="bottomRight"
     >

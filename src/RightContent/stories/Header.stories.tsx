@@ -25,6 +25,7 @@ Primary.args = {
   navTheme: undefined,
   versionTag: 'dev',
   currentUser: { name: 'test user' },
+  infoHiddenList: ['contact'],
   services: [
     {
       externalDomain: 'https://google.com',
@@ -46,11 +47,11 @@ Primary.args = {
       Icon: <AppleOutlined />,
     },
   ],
-  extendsInfoDropdown: [
-    {
-      label: 'extendsInfoDropdown',
-      onClick: () => {},
-    },
-  ],
+  // extendsInfoDropdown: [
+  //   {
+  //     label: 'extendsInfoDropdown',
+  //     onClick: () => {},
+  //   },
+  // ],
   onTracking: () => {},
 };

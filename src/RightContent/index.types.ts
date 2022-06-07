@@ -17,3 +17,9 @@ export type DropdownProps = {
   onClick: () => void;
   Icon?: JSX.Element;
 };
+
+export type avatarHiddenListProp = 'setting' | 'logout';
+
+export type exploreHiddenListProp = 'home';
+
+export type infoHiddenListProp = 'contact' | 'faq';

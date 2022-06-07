@@ -5,7 +5,15 @@ import Avatar from './AvatarDropdown';
 import ExplorationDropdown from './ExplorationDropdown';
 import InfoDropdown from './InfoDropdown';
 
-import type { ServiceProp, FormatMessageProp, UserlogoutProps, DropdownProps } from './index.types';
+import type {
+  ServiceProp,
+  FormatMessageProp,
+  UserlogoutProps,
+  DropdownProps,
+  exploreHiddenListProp,
+  infoHiddenListProp,
+  avatarHiddenListProp,
+} from './index.types';
 
 export type SiderTheme = 'light' | 'dark';
 
@@ -27,6 +35,9 @@ export interface HeaderRightProps {
   onUpdateLocale: (lang: string, realReload?: boolean) => void;
   extendsAvatarDropdown?: DropdownProps[];
   extendsInfoDropdown?: DropdownProps[];
+  avatarHiddenList?: avatarHiddenListProp[];
+  infoHiddenList?: infoHiddenListProp[];
+  exploreHiddenList?: exploreHiddenListProp[];
 }
 
 export const HeaderRight: React.FC<HeaderRightProps> = ({
@@ -39,7 +50,10 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   onTracking,
   services,
   extendsAvatarDropdown,
+  avatarHiddenList,
   extendsInfoDropdown,
+  infoHiddenList,
+  exploreHiddenList,
 }) => {
   let className = styles.right;
 
@@ -52,17 +66,20 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
         formatMessage={formatMessage}
         onTracking={onTracking}
         extendsInfoDropdown={extendsInfoDropdown}
+        infoHiddenList={infoHiddenList}
       />
       <ExplorationDropdown
         formatMessage={formatMessage}
         services={services}
         onTracking={onTracking}
+        exploreHiddenList={exploreHiddenList}
       />
       <Avatar
         onUserlogout={onUserlogout}
         formatMessage={formatMessage}
         currentUser={currentUser}
         extendsAvatarDropdown={extendsAvatarDropdown}
+        avatarHiddenList={avatarHiddenList}
       />
       {versionTag && (
         <span>
