@@ -6,7 +6,12 @@ import { UserOutlined } from '@ant-design/icons';
 import styles from './index.less';
 import { getSsoUrl } from '../utils/utils';
 
-import type { FormatMessageProp, UserlogoutProps, DropdownProps } from './index.types';
+import type {
+  FormatMessageProp,
+  UserlogoutProps,
+  DropdownProps,
+  avatarHiddenListProp,
+} from './index.types';
 
 export type GlobalHeaderRightProps = {
   onUserlogout: UserlogoutProps;
@@ -15,6 +20,7 @@ export type GlobalHeaderRightProps = {
     name: string;
   };
   extendsAvatarDropdown?: DropdownProps[];
+  avatarHiddenList?: avatarHiddenListProp[];
 };
 
 /**
@@ -30,6 +36,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({
   formatMessage,
   currentUser,
   extendsAvatarDropdown = [],
+  avatarHiddenList = [],
 }) => {
   const loading = (
     <span className={`${styles.action} ${styles.account}`}>
@@ -53,12 +60,14 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({
 
   const menuHeaderDropdown = (
     <Menu className={styles.menu}>
-      <Menu.Item key="setting" onClick={() => window.location.assign(`${getSsoUrl()}/profile`)}>
-        <SettingOutlined />
-        {formatMessage({
-          id: 'common.nav.settings',
-        })}
-      </Menu.Item>
+      {!avatarHiddenList.includes('setting') && (
+        <Menu.Item key="setting" onClick={() => window.location.assign(`${getSsoUrl()}/profile`)}>
+          <SettingOutlined />
+          {formatMessage({
+            id: 'common.nav.settings',
+          })}
+        </Menu.Item>
+      )}
       {extendsAvatarDropdown.length > 0 &&
         extendsAvatarDropdown.map(({ Icon, label, onClick }) => {
           return (
@@ -68,12 +77,14 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({
             </Menu.Item>
           );
         })}
-      <Menu.Item key="logout" onClick={() => loginOut(onUserlogout)}>
-        <LogoutOutlined />
-        {formatMessage({
-          id: 'common.nav.logout',
-        })}
-      </Menu.Item>
+      {!avatarHiddenList.includes('logout') && (
+        <Menu.Item key="logout" onClick={() => loginOut(onUserlogout)}>
+          <LogoutOutlined />
+          {formatMessage({
+            id: 'common.nav.logout',
+          })}
+        </Menu.Item>
+      )}
     </Menu>
   );
 
