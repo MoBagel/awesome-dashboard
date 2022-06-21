@@ -9,7 +9,7 @@ export interface FormatMessageProp {
 }
 
 export interface UserlogoutProps {
-  (): Promise<void>;
+  (): Promise<boolean | void>;
 }
 
 export type DropdownProps = {

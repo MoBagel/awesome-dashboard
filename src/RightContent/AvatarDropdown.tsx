@@ -27,8 +27,10 @@ export type GlobalHeaderRightProps = {
  * 退出登录，并且将当前的 url 保存
  */
 const loginOut: (onUserlogout: UserlogoutProps) => Promise<void> = async (onUserlogout) => {
-  await onUserlogout();
-  window.location.assign(`${getSsoUrl()}/login`);
+  const isDisableRedirect = await onUserlogout();
+  if (!isDisableRedirect) {
+    window.location.assign(`${getSsoUrl()}/login`);
+  }
 };
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({

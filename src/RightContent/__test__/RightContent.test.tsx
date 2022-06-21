@@ -28,7 +28,7 @@ describe('Test NotificationBar render', () => {
     currentUser: { name: 'test' },
     services: [],
     formatMessage: ({ id }) => id,
-    onUserlogout: async () => {},
+    onUserlogout: async () => true,
     onTracking: () => {}, 
     onUpdateLocale: () => {},
   };
