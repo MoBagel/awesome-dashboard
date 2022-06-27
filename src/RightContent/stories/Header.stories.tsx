@@ -47,11 +47,11 @@ Primary.args = {
       Icon: <AppleOutlined />,
     },
   ],
-  // extendsInfoDropdown: [
-  //   {
-  //     label: 'extendsInfoDropdown',
-  //     onClick: () => {},
-  //   },
-  // ],
+  extendsInfoDropdown: [
+    {
+      label: 'extendsInfoDropdown',
+      onClick: () => {},
+    },
+  ],
   onTracking: () => {},
 };

@@ -36,7 +36,7 @@ const QuestionMenu: React.FC<{
       {extendsInfoDropdown.length > 0 &&
         extendsInfoDropdown.map(({ Icon, label, onClick }) => {
           return (
-            <Menu.Item key="logout" onClick={onClick}>
+            <Menu.Item key={label} onClick={onClick}>
               {Icon}
               {label}
             </Menu.Item>
