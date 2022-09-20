@@ -9,7 +9,6 @@ const DEFAULT_LANGS = [
   {
     lang: 'en-US',
     label: 'English',
-    title: 'Language'
   },
   {
     lang: 'zh-TW',

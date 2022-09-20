@@ -4,6 +4,7 @@ import styles from './index.less';
 import Avatar from './AvatarDropdown';
 import ExplorationDropdown from './ExplorationDropdown';
 import InfoDropdown from './InfoDropdown';
+import SelectLang from './SelectLang';
 
 import type {
   ServiceProp,
@@ -38,6 +39,7 @@ export interface HeaderRightProps {
   avatarHiddenList?: avatarHiddenListProp[];
   infoHiddenList?: infoHiddenListProp[];
   exploreHiddenList?: exploreHiddenListProp[];
+  isShowLang?: boolean;
 }
 
 export const HeaderRight: React.FC<HeaderRightProps> = ({
@@ -54,6 +56,8 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   extendsInfoDropdown,
   infoHiddenList,
   exploreHiddenList,
+  onUpdateLocale,
+  isShowLang,
 }) => {
   let className = styles.right;
 
@@ -86,6 +90,7 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
           <Tag color={ENVTagColor[versionTag]}>{versionTag}</Tag>
         </span>
       )}
+      {isShowLang && <SelectLang onUpdateLocale={onUpdateLocale} />}
     </Space>
   );
 };
