@@ -24,6 +24,11 @@ const ENVTagColor = {
   pre: '#87d068',
 };
 
+export type extendLangsDropdownProps = {
+  lang: string;
+  label: string;
+};
+
 export interface HeaderRightProps {
   layout: 'top' | 'mix';
   navTheme?: 'dark';
@@ -40,6 +45,7 @@ export interface HeaderRightProps {
   infoHiddenList?: infoHiddenListProp[];
   exploreHiddenList?: exploreHiddenListProp[];
   isShowLang?: boolean;
+  extendLangsDropdown?: extendLangsDropdownProps[];
 }
 
 export const HeaderRight: React.FC<HeaderRightProps> = ({
@@ -58,6 +64,7 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   exploreHiddenList,
   onUpdateLocale,
   isShowLang,
+  extendLangsDropdown,
 }) => {
   let className = styles.right;
 
@@ -90,7 +97,9 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
           <Tag color={ENVTagColor[versionTag]}>{versionTag}</Tag>
         </span>
       )}
-      {isShowLang && <SelectLang onUpdateLocale={onUpdateLocale} />}
+      {isShowLang && (
+        <SelectLang onUpdateLocale={onUpdateLocale} extendLangsDropdown={extendLangsDropdown} />
+      )}
     </Space>
   );
 };

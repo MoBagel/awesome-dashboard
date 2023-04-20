@@ -54,4 +54,6 @@ Primary.args = {
     },
   ],
   onTracking: () => {},
+  isShowLang: true,
+  extendLangsDropdown: [{ lang: 'zh-CN', label: '簡體中文' }],
 };
