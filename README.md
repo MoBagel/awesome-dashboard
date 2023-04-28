@@ -57,6 +57,10 @@ We advice you develop component on `storybook`. Because it can make our componen
 ```
 yarn
 
+```
+// build storybook
+yarn build-storybook
+
 // start storybook
 yarn storybook
 ```
