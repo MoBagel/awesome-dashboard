@@ -14,9 +14,14 @@ const QuestionMenu: React.FC<{
   return (
     <Menu>
       {!infoHiddenList.includes('contact') && (
-        <Menu.Item>
+        <Menu.Item
+          onClick={() => {
+            onTracking('contact');
+            window.open('https://www.8ndpoint.com/contact');
+          }}
+        >
           <a href="mailto:hello@8ndpoint.com" target="_blank" rel="noopener noreferrer">
-            {formatMessage({ id: 'common.nav.faq' })}
+            {formatMessage({ id: 'common.nav.contact' })}
           </a>
         </Menu.Item>
       )}
