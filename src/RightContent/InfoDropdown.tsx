@@ -24,13 +24,10 @@ const QuestionMenu: React.FC<{
         </Menu.Item>
       )}
       {!infoHiddenList.includes('faq') && (
-        <Menu.Item
-          onClick={() => {
-            onTracking('faq');
-            window.open('https://www.8ndpoint.com/faq');
-          }}
-        >
-          {formatMessage({ id: 'common.nav.faq' })}
+        <Menu.Item>
+          <a href="mailto:hello@8ndpoint.com" target="_blank" rel="noopener noreferrer">
+            {formatMessage({ id: 'common.nav.faq' })}
+          </a>
         </Menu.Item>
       )}
       {extendsInfoDropdown.length > 0 &&
