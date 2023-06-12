@@ -17,7 +17,6 @@ const QuestionMenu: React.FC<{
         <Menu.Item
           onClick={() => {
             onTracking('contact');
-            window.open('https://www.8ndpoint.com/contact');
           }}
         >
           <a href="mailto:hello@8ndpoint.com" target="_blank" rel="noopener noreferrer">
