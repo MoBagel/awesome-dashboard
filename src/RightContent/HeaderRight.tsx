@@ -46,6 +46,7 @@ export interface HeaderRightProps {
   exploreHiddenList?: exploreHiddenListProp[];
   isShowLang?: boolean;
   extendLangsDropdown?: extendLangsDropdownProps[];
+  children?: React.ReactNode;
 }
 
 export const HeaderRight: React.FC<HeaderRightProps> = ({
@@ -65,14 +66,16 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
   onUpdateLocale,
   isShowLang,
   extendLangsDropdown,
+  children,
 }) => {
   let className = styles.right;
 
   if ((navTheme === 'dark' && layout === 'top') || layout === 'mix') {
     className = `${styles.right}  ${styles.dark}`;
   }
-  return (
-    <Space className={className} size={32}>
+
+  const Content = (
+    <>
       <InfoDropdown
         formatMessage={formatMessage}
         onTracking={onTracking}
@@ -100,6 +103,16 @@ export const HeaderRight: React.FC<HeaderRightProps> = ({
       {isShowLang && (
         <SelectLang onUpdateLocale={onUpdateLocale} extendLangsDropdown={extendLangsDropdown} />
       )}
+    </>
+  );
+
+  return (
+    <Space className={className} size={32}>
+      {typeof children === 'function'
+        ? children({
+            ContentRender: Content,
+          })
+        : Content}
     </Space>
   );
 };
