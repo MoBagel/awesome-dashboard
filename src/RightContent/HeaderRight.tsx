@@ -46,7 +46,7 @@ export interface HeaderRightProps {
   exploreHiddenList?: exploreHiddenListProp[];
   isShowLang?: boolean;
   extendLangsDropdown?: extendLangsDropdownProps[];
-  children?: React.ReactNode;
+  children?: ({ ContentRender }: { ContentRender: React.ReactNode }) => React.ReactNode;
 }
 
 export const HeaderRight: React.FC<HeaderRightProps> = ({
