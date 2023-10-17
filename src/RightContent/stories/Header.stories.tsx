@@ -15,7 +15,11 @@ export default HeaderStory;
 const Template: Story<HeaderRightProps> = (args) => {
   const intl = useIntl();
   const format = ({ id }: { id: string }) => intl.formatMessage({ id });
-  return <HeaderRight {...args} formatMessage={format} />;
+  return (
+    <HeaderRight {...args} formatMessage={format}>
+      {({ ContentRender }) => <>{ContentRender}123123</>}
+    </HeaderRight>
+  );
 };
 
 export const Primary = Template.bind({});
@@ -56,4 +60,5 @@ Primary.args = {
   onTracking: () => {},
   isShowLang: true,
   extendLangsDropdown: [{ lang: 'zh-CN', label: '簡體中文' }],
+  children: ({ ContentRender }) => ContentRender,
 };
