@@ -43,11 +43,7 @@ const InfoDropDwon: React.FC<{
   extendsInfoDropdown?: DropdownProps[];
   infoHiddenList?: infoHiddenListProp[];
 }> = ({ formatMessage, onTracking, extendsInfoDropdown = [], infoHiddenList = [] }) => {
-  if (
-    extendsInfoDropdown.length === 0 &&
-    infoHiddenList.includes('faq') &&
-    infoHiddenList.includes('contact')
-  ) {
+  if (extendsInfoDropdown.length === 0 && infoHiddenList.includes('contact')) {
     return null;
   }
   return (
