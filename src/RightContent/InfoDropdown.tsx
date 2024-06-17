@@ -19,19 +19,9 @@ const QuestionMenu: React.FC<{
             onTracking('contact');
           }}
         >
-          <a href="mailto:hello@8ndpoint.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://mobagel.com/tw/help/" target="_blank" rel="noopener noreferrer">
             {formatMessage({ id: 'common.nav.contact' })}
           </a>
-        </Menu.Item>
-      )}
-      {!infoHiddenList.includes('faq') && (
-        <Menu.Item
-          onClick={() => {
-            onTracking('faq');
-            window.open('https://www.8ndpoint.com/faq');
-          }}
-        >
-          {formatMessage({ id: 'common.nav.faq' })}
         </Menu.Item>
       )}
       {extendsInfoDropdown.length > 0 &&

@@ -22,4 +22,4 @@ export type avatarHiddenListProp = 'setting' | 'logout';
 
 export type exploreHiddenListProp = 'home';
 
-export type infoHiddenListProp = 'contact' | 'faq';
+export type infoHiddenListProp = 'contact';
